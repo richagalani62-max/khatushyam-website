@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="relative bg-black text-white min-h-screen font-sans scroll-smooth overflow-hidden">
+    <div className="relative bg-black text-white min-h-screen font-sans scroll-smooth overflow-hidden pt-24">
 
       {/* Background Watermark Logo */}
       <div
@@ -9,10 +9,11 @@ export default function Home() {
       ></div>
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-6 border-b border-gray-800 fixed w-full bg-black/90 backdrop-blur-md z-50">
-        <h1 className="text-xl font-semibold tracking-widest">
+      <nav className="flex justify-between items-center px-8 py-6 border-b border-gray-800 fixed top-0 w-full bg-black/90 backdrop-blur-md z-50">
+
+        <a href="#home" className="text-xl font-semibold tracking-widest">
           KHATUSHYAM COMMERCE INTELLIGENCE
-        </h1>
+        </a>
 
         <div className="space-x-8 text-sm text-gray-300">
           <a href="#home" className="hover:text-white">Home</a>
@@ -86,6 +87,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
+          {/* Starter */}
           <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
             <h4 className="text-xl font-semibold mb-4">STARTER PACKAGE</h4>
             <p className="text-gray-400 mb-6">
@@ -103,6 +105,7 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Growth */}
           <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
             <h4 className="text-xl font-semibold mb-4">GROWTH PACKAGE</h4>
             <p className="text-gray-400 mb-6">
@@ -121,6 +124,7 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Scale */}
           <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
             <h4 className="text-xl font-semibold mb-4">
               SCALE PACKAGE (PREMIUM)
@@ -146,9 +150,14 @@ export default function Home() {
 
       {/* CAREERS */}
       <section id="careers" className="relative z-10 px-8 py-24 bg-black">
-        <h3 className="text-3xl font-bold text-center mb-16">
+        <h3 className="text-3xl font-bold text-center mb-6">
           Career Opportunities
         </h3>
+
+        <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto">
+          🌍 All roles are fully remote and open to <span className="text-white font-medium">Indian citizens only</span>.
+          Work from anywhere in India while collaborating on real marketplace growth projects.
+        </p>
 
         <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
 
@@ -176,9 +185,16 @@ export default function Home() {
           ].map((role, i) => (
             <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
               <h4 className="text-xl font-semibold mb-4">{role.title}</h4>
+
+              <span className="inline-block text-xs bg-white/10 text-gray-300 px-3 py-1 rounded-full mb-4">
+                Remote • India Only
+              </span>
+
               <p className="text-gray-400 mb-4">{role.desc}</p>
+
               <p className="text-white font-semibold mb-2">Compensation:</p>
               <p className="text-gray-400 mb-4 text-sm">{role.comp}</p>
+
               <a
                 href={`mailto:richagalani62@gmail.com?subject=Application for ${role.title}`}
                 className="inline-block bg-white text-black px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition"
@@ -191,7 +207,7 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-16 text-gray-500 text-sm">
-          We believe in performance-driven growth. High performers scale with us.
+          Performance-driven culture. High performers grow fast with us.
         </div>
       </section>
 
