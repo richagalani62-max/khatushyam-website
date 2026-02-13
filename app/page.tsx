@@ -1,9 +1,9 @@
 export default function Home() {
   return (
-    <div className="bg-black text-white min-h-screen font-sans">
+    <div className="bg-black text-white min-h-screen font-sans scroll-smooth">
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-6 border-b border-gray-800">
+      <nav className="flex justify-between items-center px-8 py-6 border-b border-gray-800 fixed w-full bg-black z-50">
         <div>
           <h1 className="text-2xl font-bold tracking-wide">
             Khatushyam Commerce Intelligence
@@ -15,15 +15,14 @@ export default function Home() {
 
         <div className="space-x-8 text-sm text-gray-300">
           <a href="#home" className="hover:text-white transition">Home</a>
-<a href="#about" className="hover:text-white transition">About</a>
-<a href="#services" className="hover:text-white transition">Services</a>
-<a href="#contact" className="hover:text-white transition">Contact</a>
-
-       </div>
+          <a href="#about" className="hover:text-white transition">About</a>
+          <a href="#services" className="hover:text-white transition">Services</a>
+          <a href="#contact" className="hover:text-white transition">Contact</a>
+        </div>
       </nav>
 
       {/* Hero */}
-      <section id="home" className="flex flex-col items-center justify-center text-center px-6 py-32">
+      <section id="home" className="flex flex-col items-center justify-center text-center px-6 py-40">
         <h2 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl">
           Intelligent Commerce Solutions for Modern Businesses
         </h2>
@@ -34,23 +33,24 @@ export default function Home() {
         </p>
 
         <div className="mt-10 flex gap-6">
-          <button className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:scale-105 transition">
+          <a href="#contact" className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:scale-105 transition">
             Get Started
-          </button>
+          </a>
 
-          <button className="border border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition">
+          <a href="#services" className="border border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition">
             Our Services
-          </button>
+          </a>
         </div>
-           </section>
+      </section>
 
       {/* About */}
       <section id="about" className="px-8 py-24 bg-black text-center">
         <h3 className="text-3xl font-bold mb-8">About Us</h3>
-        <p className="text-gray-400 max-w-3xl mx-auto">
-          Khatushyam Commerce Intelligence is focused on transforming businesses
+        <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          Khatushyam Commerce Intelligence specializes in transforming businesses
           through data-driven strategy, intelligent commerce systems,
-          and scalable technology infrastructure.
+          and scalable digital infrastructure. We operate as a strategic
+          growth partner — not just a service provider.
         </p>
       </section>
 
@@ -62,6 +62,7 @@ export default function Home() {
         </h3>
 
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+
           <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
             <h4 className="text-xl font-semibold mb-4">Commerce Strategy</h4>
             <p className="text-gray-400">
@@ -70,7 +71,20 @@ export default function Home() {
           </div>
 
           <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
-                   </div>
+            <h4 className="text-xl font-semibold mb-4">Technology Development</h4>
+            <p className="text-gray-400">
+              Scalable web platforms and digital systems engineered for performance.
+            </p>
+          </div>
+
+          <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+            <h4 className="text-xl font-semibold mb-4">Analytics & Intelligence</h4>
+            <p className="text-gray-400">
+              Actionable business intelligence to drive strategic decisions.
+            </p>
+          </div>
+
+        </div>
       </section>
 
       {/* Contact */}
@@ -99,3 +113,7 @@ export default function Home() {
       <footer className="text-center py-10 border-t border-gray-800 text-gray-500 text-sm">
         © {new Date().getFullYear()} Khatushyam Commerce Intelligence. All rights reserved.
       </footer>
+
+    </div>
+  );
+}
