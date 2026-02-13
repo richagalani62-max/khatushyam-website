@@ -162,7 +162,8 @@ export default function Home() {
   </h3>
 
   <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto">
-    🌍 All roles are fully remote and open to <span className="text-white font-medium">Indian citizens only</span>.
+    🌍 All roles are fully remote and open to 
+    <span className="text-white font-medium"> Indian citizens only</span>.
     Work from anywhere in India while collaborating on real marketplace growth projects.
   </p>
 
@@ -189,45 +190,82 @@ export default function Home() {
         desc: "Full account ownership, profit optimization and marketplace execution.",
         comp: "Performance-based revenue share with structured incentives."
       }
-    ].map((role, i) => {
-      const form = useRef();
-      const sendEmail = (e) => {
-        e.preventDefault();
-        emailjs.sendForm(
-          "YOUR_SERVICE_ID",
-          "YOUR_TEMPLATE_ID",
-          form.current,
-          "YOUR_PUBLIC_KEY"
-        )
-        .then(() => alert("Application sent successfully!"))
-        .catch(() => alert("Error sending application. Try again."));
-      };
+    ].map((role, i) => (
 
-      return (
-        <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
-          <h4 className="text-xl font-semibold mb-4">{role.title}</h4>
+      <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+        <h4 className="text-xl font-semibold mb-4">{role.title}</h4>
 
-          <span className="inline-block text-xs bg-white/10 text-gray-300 px-3 py-1 rounded-full mb-4">
-            Remote • India Only
-          </span>
+        <span className="inline-block text-xs bg-white/10 text-gray-300 px-3 py-1 rounded-full mb-4">
+          Remote • India Only
+        </span>
 
-          <p className="text-gray-400 mb-4">{role.desc}</p>
+        <p className="text-gray-400 mb-4">{role.desc}</p>
 
-          <p className="text-white font-semibold mb-2">Compensation:</p>
-          <p className="text-gray-400 mb-4 text-sm">{role.comp}</p>
+        <p className="text-white font-semibold mb-2">Compensation:</p>
+        <p className="text-gray-400 mb-4 text-sm">{role.comp}</p>
 
-          <form ref={form} onSubmit={sendEmail} className="space-y-3">
-            <input type="text" name="name" placeholder="Full Name" required className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white" />
-            <input type="email" name="email" placeholder="Email" required className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white" />
-            <input type="text" name="role" value={role.title} readOnly className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-gray-400" />
-            <textarea name="message" placeholder="Cover Letter / Details" required className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white"></textarea>
-            <button type="submit" className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition w-full">
-              Apply Now
-            </button>
-          </form>
-        </div>
-      );
-    })}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+
+            emailjs.sendForm(
+              "YOUR_SERVICE_ID",
+              "YOUR_TEMPLATE_ID",
+              e.target,
+              "YOUR_PUBLIC_KEY"
+            )
+            .then(() => {
+              alert("Application sent successfully!");
+              e.target.reset();
+            })
+            .catch(() => {
+              alert("Error sending application. Try again.");
+            });
+          }}
+          className="space-y-3"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            required
+            className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white"
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white"
+          />
+
+          <input
+            type="text"
+            name="role"
+            value={role.title}
+            readOnly
+            className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-gray-400"
+          />
+
+          <textarea
+            name="message"
+            placeholder="Cover Letter / Details"
+            required
+            className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition w-full"
+          >
+            Apply Now
+          </button>
+        </form>
+
+      </div>
+
+    ))}
 
   </div>
 
@@ -235,6 +273,7 @@ export default function Home() {
     Performance-driven culture. High performers grow fast with us.
   </div>
 </section>
+
 
 
       {/* CONTACT */}
