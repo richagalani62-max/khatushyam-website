@@ -18,6 +18,7 @@ export default function Home() {
           <a href="#about" className="hover:text-white transition">About</a>
           <a href="#services" className="hover:text-white transition">Services</a>
           <a href="#contact" className="hover:text-white transition">Contact</a>
+          <a href="#careers" className="hover:text-white transition">Careers</a>
         </div>
       </nav>
 
@@ -49,35 +50,33 @@ export default function Home() {
         <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
           Khatushyam Commerce Intelligence specializes in transforming businesses
           through data-driven strategy, intelligent commerce systems,
-          and scalable digital infrastructure. We operate as a strategic
-          growth partner — not just a service provider.
+          and scalable digital infrastructure.
         </p>
       </section>
 
       {/* Services */}
       <section id="services" className="px-8 py-24 bg-zinc-950">
-
         <h3 className="text-3xl font-bold text-center mb-16">
           Core Capabilities
         </h3>
 
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
 
-          <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+          <div className="p-8 border border-gray-800 rounded-xl hover:border-white hover:-translate-y-3 hover:shadow-2xl transition duration-300">
             <h4 className="text-xl font-semibold mb-4">Commerce Strategy</h4>
             <p className="text-gray-400">
               Data-backed planning and revenue optimization models for sustainable growth.
             </p>
           </div>
 
-          <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+          <div className="p-8 border border-gray-800 rounded-xl hover:border-white hover:-translate-y-3 hover:shadow-2xl transition duration-300">
             <h4 className="text-xl font-semibold mb-4">Technology Development</h4>
             <p className="text-gray-400">
               Scalable web platforms and digital systems engineered for performance.
             </p>
           </div>
 
-          <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+          <div className="p-8 border border-gray-800 rounded-xl hover:border-white hover:-translate-y-3 hover:shadow-2xl transition duration-300">
             <h4 className="text-xl font-semibold mb-4">Analytics & Intelligence</h4>
             <p className="text-gray-400">
               Actionable business intelligence to drive strategic decisions.
@@ -106,6 +105,43 @@ export default function Home() {
           >
             Contact Now
           </a>
+        </div>
+      </section>
+
+      {/* Careers */}
+      <section id="careers" className="px-8 py-24 bg-zinc-950 text-center">
+        <h3 className="text-3xl font-bold mb-12">Career Opportunities</h3>
+
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+          <div className="p-8 border border-gray-800 rounded-xl hover:border-white hover:-translate-y-3 hover:shadow-2xl transition duration-300 text-left">
+            <h4 className="text-xl font-semibold mb-4">Marketing Intern</h4>
+            <p className="text-gray-400 mb-4">
+              Work on client acquisition, branding strategy, content marketing,
+              and digital growth initiatives.
+            </p>
+            <a
+              href="mailto:richagalani62@gmail.com?subject=Application for Marketing Intern"
+              className="inline-block bg-white text-black px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition"
+            >
+              Apply Now
+            </a>
+          </div>
+
+          <div className="p-8 border border-gray-800 rounded-xl hover:border-white hover:-translate-y-3 hover:shadow-2xl transition duration-300 text-left">
+            <h4 className="text-xl font-semibold mb-4">E-Commerce Operations Intern</h4>
+            <p className="text-gray-400 mb-4">
+              Assist in marketplace management, catalog optimization,
+              analytics tracking and reporting.
+            </p>
+            <a
+              href="mailto:richagalani62@gmail.com?subject=Application for Ecommerce Intern"
+              className="inline-block bg-white text-black px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition"
+            >
+              Apply Now
+            </a>
+          </div>
+
         </div>
       </section>
 
