@@ -14,15 +14,16 @@ export default function Home() {
         </div>
 
         <div className="space-x-8 text-sm text-gray-300">
-          <a href="#" className="hover:text-white transition">Home</a>
-          <a href="#" className="hover:text-white transition">About</a>
-          <a href="#" className="hover:text-white transition">Services</a>
-          <a href="#" className="hover:text-white transition">Contact</a>
-        </div>
+          <a href="#home" className="hover:text-white transition">Home</a>
+<a href="#about" className="hover:text-white transition">About</a>
+<a href="#services" className="hover:text-white transition">Services</a>
+<a href="#contact" className="hover:text-white transition">Contact</a>
+
+       </div>
       </nav>
 
       {/* Hero */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-32">
+      <section id="home" className="flex flex-col items-center justify-center text-center px-6 py-32">
         <h2 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl">
           Intelligent Commerce Solutions for Modern Businesses
         </h2>
@@ -41,10 +42,21 @@ export default function Home() {
             Our Services
           </button>
         </div>
+           </section>
+
+      {/* About */}
+      <section id="about" className="px-8 py-24 bg-black text-center">
+        <h3 className="text-3xl font-bold mb-8">About Us</h3>
+        <p className="text-gray-400 max-w-3xl mx-auto">
+          Khatushyam Commerce Intelligence is focused on transforming businesses
+          through data-driven strategy, intelligent commerce systems,
+          and scalable technology infrastructure.
+        </p>
       </section>
 
       {/* Services */}
-      <section className="px-8 py-24 bg-zinc-950">
+      <section id="services" className="px-8 py-24 bg-zinc-950">
+
         <h3 className="text-3xl font-bold text-center mb-16">
           Core Capabilities
         </h3>
@@ -58,18 +70,28 @@ export default function Home() {
           </div>
 
           <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
-            <h4 className="text-xl font-semibold mb-4">Technology Development</h4>
-            <p className="text-gray-400">
-              Scalable web platforms and digital systems engineered for performance.
-            </p>
-          </div>
+                   </div>
+      </section>
 
-          <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
-            <h4 className="text-xl font-semibold mb-4">Analytics & Intelligence</h4>
-            <p className="text-gray-400">
-              Actionable business intelligence to drive strategic decisions.
-            </p>
-          </div>
+      {/* Contact */}
+      <section id="contact" className="px-8 py-24 bg-black text-center">
+        <h3 className="text-3xl font-bold mb-8">Let’s Work Together</h3>
+        <p className="text-gray-400 mb-10">
+          Ready to scale your e-commerce operations? Connect with us today.
+        </p>
+
+        <div className="space-y-4 text-gray-300">
+          <p>Email: richagalani62@gmail.com</p>
+          <p>Location: Katni, Madhya Pradesh, India</p>
+        </div>
+
+        <div className="mt-8">
+          <a
+            href="mailto:richagalani62@gmail.com"
+            className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:opacity-80 transition"
+          >
+            Contact Now
+          </a>
         </div>
       </section>
 
@@ -77,7 +99,3 @@ export default function Home() {
       <footer className="text-center py-10 border-t border-gray-800 text-gray-500 text-sm">
         © {new Date().getFullYear()} Khatushyam Commerce Intelligence. All rights reserved.
       </footer>
-
-    </div>
-  );
-}
