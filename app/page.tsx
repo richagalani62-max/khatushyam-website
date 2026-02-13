@@ -9,11 +9,21 @@ export default function Home() {
       ></div>
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-6 border-b border-gray-800 fixed top-0 w-full bg-black/90 backdrop-blur-md z-50">
+<nav className="flex justify-between items-center px-8 py-6 border-b border-gray-800 fixed top-0 w-full bg-black/90 backdrop-blur-md z-50">
 
-        <a href="#home" className="text-xl font-semibold tracking-widest">
-          KHATUSHYAM COMMERCE INTELLIGENCE
-        </a>
+  {/* Logo + Brand */}
+  <a href="#home" className="flex items-center gap-3">
+    <img
+      src="/logo.png"
+      alt="Khatushyam Commerce Intelligence Logo"
+      className="h-10 w-auto object-contain"
+    />
+
+    <span className="text-xl font-semibold tracking-widest">
+      KHATUSHYAM COMMERCE INTELLIGENCE
+    </span>
+  </a>
+
 
         <div className="space-x-8 text-sm text-gray-300">
           <a href="#home" className="hover:text-white">Home</a>
