@@ -178,6 +178,71 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/* ================= CAREERS ================= */}
+      <section id="careers" className="relative z-10 px-8 py-24 bg-black">
+        <h3 className="text-3xl font-bold text-center mb-6">
+          Career Opportunities
+        </h3>
+
+        <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto">
+          🌍 All roles are fully remote and open to
+          <span className="text-white font-medium"> Indian citizens only</span>.
+          Work from anywhere in India while collaborating on real marketplace growth projects.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
+          {[
+            {
+              title: "Marketing Intern",
+              desc: "Work on client acquisition, outreach campaigns and growth strategy.",
+              comp: "10% commission on every successfully converted client project."
+            },
+            {
+              title: "E-Commerce Intern",
+              desc: "Assist in marketplace account management, ads optimization and reporting.",
+              comp: "10% commission on converted client accounts with measurable contribution."
+            },
+            {
+              title: "Marketing Specialist",
+              desc: "Lead partnerships, performance marketing and revenue growth initiatives.",
+              comp: "Performance-linked structure + high commission model."
+            },
+            {
+              title: "E-Commerce Specialist",
+              desc: "Full account ownership, profit optimization and marketplace execution.",
+              comp: "Performance-based revenue share with structured incentives."
+            }
+          ].map((role, i) => (
+
+            <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+              <h4 className="text-xl font-semibold mb-4">{role.title}</h4>
+
+              <span className="inline-block text-xs bg-white/10 text-gray-300 px-3 py-1 rounded-full mb-4">
+                Remote • India Only
+              </span>
+
+              <p className="text-gray-400 mb-4">{role.desc}</p>
+
+              <p className="text-white font-semibold mb-2">Compensation:</p>
+              <p className="text-gray-400 mb-6 text-sm">{role.comp}</p>
+<a
+  href={`mailto:richagalani62@gmail.com?subject=Application for ${role.title}`}
+  className="block text-center bg-white text-black px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition"
+>
+  Apply Now
+</a>
+
+            </div>
+
+          ))}
+
+        </div>
+
+        <div className="text-center mt-16 text-gray-500 text-sm">
+          Performance-driven culture. High performers grow fast with us.
+        </div>
+      </section>
 
       {/* ================= CONTACT ================= */}
       <section id="contact" className="relative z-10 px-8 py-24 bg-zinc-950 text-center">
