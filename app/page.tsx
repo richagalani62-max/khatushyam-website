@@ -3,27 +3,43 @@ export default function Home() {
     <div className="relative bg-black text-white min-h-screen font-sans scroll-smooth overflow-hidden pt-24">
 
       {/* Background Watermark Logo */}
-    <div
-  className="absolute inset-0 opacity-5 bg-center bg-no-repeat bg-contain animate-float"
+      <div
+        className="absolute inset-0 opacity-[0.03] blur-sm bg-center bg-no-repeat bg-contain animate-float"
         style={{ backgroundImage: "url('/logo.png')" }}
       ></div>
 
-      {/* Navbar */}
-<nav className="flex justify-between items-center px-8 py-6 border-b border-gray-800 fixed top-0 w-full bg-black/90 backdrop-blur-md z-50">
+      {/* ================= NAVBAR ================= */}
+      <nav className="flex justify-between items-center px-8 py-6 fixed top-0 w-full bg-black/70 backdrop-blur-xl border-b border-white/10 z-50">
 
-  {/* Logo + Brand */}
-  <a href="#home" className="flex items-center gap-3">
-    <img
-      src="/logo.png"
-      alt="Khatushyam Commerce Intelligence Logo"
-      className="h-10 w-auto object-contain"
-    />
+        {/* Logo + Brand */}
+        <a href="#home" className="flex items-center gap-4 group">
 
-    <span className="text-xl font-semibold tracking-widest">
-      KHATUSHYAM COMMERCE INTELLIGENCE
-    </span>
-  </a>
+          <div className="relative">
+            <img
+              src="/logo.png"
+              alt="Khatushyam Commerce Intelligence Logo"
+              className="
+                h-11 w-auto object-contain
+                drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]
+                transition duration-300
+                group-hover:scale-105
+              "
+            />
 
+            {/* glow */}
+            <div className="
+              absolute inset-0 rounded-full
+              bg-white/10 blur-xl opacity-0
+              group-hover:opacity-100
+              transition duration-500
+            "></div>
+          </div>
+
+          <span className="text-lg font-semibold tracking-[0.25em] text-gray-200 group-hover:text-white transition">
+            KHATUSHYAM
+          </span>
+
+        </a>
 
         <div className="space-x-8 text-sm text-gray-300">
           <a href="#home" className="hover:text-white">Home</a>
@@ -33,13 +49,17 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
       <section id="home" className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-44">
-   <h2 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl animate-fadeUp">
+
+        {/* Premium background glow */}
+        <div className="absolute w-[650px] h-[650px] bg-blue-500/10 blur-[160px] rounded-full -z-10"></div>
+
+        <h2 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl animate-fadeUp">
           Luxury E-Commerce Growth & Marketplace Intelligence
         </h2>
 
-     <p className="mt-8 text-gray-400 text-lg max-w-3xl leading-relaxed animate-fadeUp delay-200">
+        <p className="mt-8 text-gray-400 text-lg max-w-3xl leading-relaxed animate-fadeUp delay-200">
           We partner with ambitious brands and sellers to engineer profitable
           growth across India’s leading marketplaces.
           <br /><br />
@@ -48,12 +68,11 @@ export default function Home() {
           and margin-safe.
         </p>
 
-   <p className="mt-6 text-gray-500 tracking-widest text-sm animate-fadeUp delay-400">
+        <p className="mt-6 text-gray-500 tracking-widest text-sm animate-fadeUp delay-400">
           Platforms: Amazon | Flipkart | Meesho | Myntra
         </p>
 
         <div className="mt-12 animate-fadeUp delay-600">
-
           <a
             href="#contact"
             className="bg-white text-black px-10 py-4 rounded-full font-semibold hover:scale-105 transition"
@@ -63,7 +82,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY PREMIUM */}
+      {/* ================= WHY PREMIUM ================= */}
       <section className="relative z-10 px-8 py-24 bg-zinc-950 text-center">
         <h3 className="text-3xl font-bold mb-16">
           WHY PREMIUM BRANDS CHOOSE US
@@ -90,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* ================= PRICING ================= */}
       <section id="pricing" className="relative z-10 px-8 py-24 bg-black">
         <h3 className="text-3xl font-bold text-center mb-16">
           MARKETPLACE PRICING (MONTHLY)
@@ -98,186 +117,63 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
-          {/* Starter */}
-          <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
-            <h4 className="text-xl font-semibold mb-4">STARTER PACKAGE</h4>
-            <p className="text-gray-400 mb-6">
-              For new sellers & early-stage brands
-            </p>
-            <ul className="text-gray-400 space-y-2 text-sm">
-              <li>• Account setup / takeover</li>
-              <li>• 10 optimized listings</li>
-              <li>• Basic ads setup</li>
-              <li>• Weekly performance check</li>
-              <li>• Email & WhatsApp support</li>
-            </ul>
-            <p className="mt-6 font-semibold text-white">
-              ₹3,000 – ₹7,000 / month
-            </p>
-          </div>
+          {[
+            {
+              title: "STARTER PACKAGE",
+              desc: "For new sellers & early-stage brands",
+              price: "₹3,000 – ₹7,000 / month",
+              items: [
+                "Account setup / takeover",
+                "10 optimized listings",
+                "Basic ads setup",
+                "Weekly performance check",
+                "Email & WhatsApp support"
+              ]
+            },
+            {
+              title: "GROWTH PACKAGE",
+              desc: "For scaling sellers focused on velocity",
+              price: "₹7,000 – ₹10,000 / month",
+              items: [
+                "Full account management",
+                "Advanced optimization",
+                "Daily ads management",
+                "Promotion planning",
+                "Inventory & pricing guidance",
+                "Monthly performance report"
+              ]
+            },
+            {
+              title: "SCALE PACKAGE (PREMIUM)",
+              desc: "For serious brands & high-revenue sellers",
+              price: "₹12,000+ / month",
+              items: [
+                "Dedicated account manager",
+                "Senior-led strategy",
+                "Daily ads & catalog control",
+                "Advanced analytics dashboards",
+                "SKU & category launch planning",
+                "Priority support"
+              ]
+            }
+          ].map((pkg, i) => (
+            <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+              <h4 className="text-xl font-semibold mb-4">{pkg.title}</h4>
+              <p className="text-gray-400 mb-6">{pkg.desc}</p>
 
-          {/* Growth */}
-          <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
-            <h4 className="text-xl font-semibold mb-4">GROWTH PACKAGE</h4>
-            <p className="text-gray-400 mb-6">
-              For scaling sellers focused on velocity
-            </p>
-            <ul className="text-gray-400 space-y-2 text-sm">
-              <li>• Full account management</li>
-              <li>• Advanced optimization</li>
-              <li>• Daily ads management</li>
-              <li>• Promotion planning</li>
-              <li>• Inventory & pricing guidance</li>
-              <li>• Monthly performance report</li>
-            </ul>
-            <p className="mt-6 font-semibold text-white">
-              ₹7,000 – ₹10,000 / month
-            </p>
-          </div>
+              <ul className="text-gray-400 space-y-2 text-sm">
+                {pkg.items.map((item, idx) => (
+                  <li key={idx}>• {item}</li>
+                ))}
+              </ul>
 
-          {/* Scale */}
-          <div className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
-            <h4 className="text-xl font-semibold mb-4">
-              SCALE PACKAGE (PREMIUM)
-            </h4>
-            <p className="text-gray-400 mb-6">
-              For serious brands & high-revenue sellers
-            </p>
-            <ul className="text-gray-400 space-y-2 text-sm">
-              <li>• Dedicated account manager</li>
-              <li>• Senior-led strategy</li>
-              <li>• Daily ads & catalog control</li>
-              <li>• Advanced analytics dashboards</li>
-              <li>• SKU & category launch planning</li>
-              <li>• Priority support</li>
-            </ul>
-            <p className="mt-6 font-semibold text-white">
-              ₹12,000+ / month
-            </p>
-          </div>
-
+              <p className="mt-6 font-semibold text-white">{pkg.price}</p>
+            </div>
+          ))}
         </div>
-<section id="careers" className="relative z-10 px-8 py-24 bg-black">
-  <h3 className="text-3xl font-bold text-center mb-6">
-    Career Opportunities
-  </h3>
+      </section>
 
-  <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto">
-    🌍 All roles are fully remote and open to 
-    <span className="text-white font-medium"> Indian citizens only</span>.
-    Work from anywhere in India while collaborating on real marketplace growth projects.
-  </p>
-
-  <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-
-    {[
-      {
-        title: "Marketing Intern",
-        desc: "Work on client acquisition, outreach campaigns and growth strategy.",
-        comp: "10% commission on every successfully converted client project."
-      },
-      {
-        title: "E-Commerce Intern",
-        desc: "Assist in marketplace account management, ads optimization and reporting.",
-        comp: "10% commission on converted client accounts with measurable contribution."
-      },
-      {
-        title: "Marketing Specialist",
-        desc: "Lead partnerships, performance marketing and revenue growth initiatives.",
-        comp: "Performance-linked structure + high commission model."
-      },
-      {
-        title: "E-Commerce Specialist",
-        desc: "Full account ownership, profit optimization and marketplace execution.",
-        comp: "Performance-based revenue share with structured incentives."
-      }
-    ].map((role, i) => (
-
-      <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
-        <h4 className="text-xl font-semibold mb-4">{role.title}</h4>
-
-        <span className="inline-block text-xs bg-white/10 text-gray-300 px-3 py-1 rounded-full mb-4">
-          Remote • India Only
-        </span>
-
-        <p className="text-gray-400 mb-4">{role.desc}</p>
-
-        <p className="text-white font-semibold mb-2">Compensation:</p>
-        <p className="text-gray-400 mb-4 text-sm">{role.comp}</p>
-
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-
-            emailjs.sendForm(
-              "YOUR_SERVICE_ID",
-              "YOUR_TEMPLATE_ID",
-              e.target,
-              "YOUR_PUBLIC_KEY"
-            )
-            .then(() => {
-              alert("Application sent successfully!");
-              e.target.reset();
-            })
-            .catch(() => {
-              alert("Error sending application. Try again.");
-            });
-          }}
-          className="space-y-3"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            required
-            className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white"
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white"
-          />
-
-          <input
-            type="text"
-            name="role"
-            value={role.title}
-            readOnly
-            className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-gray-400"
-          />
-
-          <textarea
-            name="message"
-            placeholder="Cover Letter / Details"
-            required
-            className="w-full px-3 py-2 rounded bg-black border border-gray-700 text-white"
-          ></textarea>
-
-          <button
-            type="submit"
-            className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition w-full"
-          >
-            Apply Now
-          </button>
-        </form>
-
-      </div>
-
-    ))}
-
-  </div>
-
-  <div className="text-center mt-16 text-gray-500 text-sm">
-    Performance-driven culture. High performers grow fast with us.
-  </div>
-</section>
-
-
-
-      {/* CONTACT */}
+      {/* ================= CONTACT ================= */}
       <section id="contact" className="relative z-10 px-8 py-24 bg-zinc-950 text-center">
         <h3 className="text-3xl font-bold mb-8">
           READY TO SCALE YOUR SALES?
@@ -299,7 +195,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* FOOTER */}
+      {/* ================= FOOTER ================= */}
       <footer className="text-center py-10 border-t border-gray-800 text-gray-500 text-sm">
         © {new Date().getFullYear()} Khatushyam Commerce Intelligence.
       </footer>
