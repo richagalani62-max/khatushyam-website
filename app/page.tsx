@@ -3,8 +3,8 @@ export default function Home() {
     <div className="relative bg-black text-white min-h-screen font-sans scroll-smooth overflow-hidden pt-24">
 
       {/* Background Watermark Logo */}
-      <div
-        className="absolute inset-0 opacity-5 bg-center bg-no-repeat bg-contain"
+    <div
+  className="absolute inset-0 opacity-5 bg-center bg-no-repeat bg-contain animate-float"
         style={{ backgroundImage: "url('/logo.png')" }}
       ></div>
 
@@ -35,11 +35,11 @@ export default function Home() {
 
       {/* HERO */}
       <section id="home" className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-44">
-        <h2 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl">
+   <h2 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl animate-fadeUp">
           Luxury E-Commerce Growth & Marketplace Intelligence
         </h2>
 
-        <p className="mt-8 text-gray-400 text-lg max-w-3xl leading-relaxed">
+     <p className="mt-8 text-gray-400 text-lg max-w-3xl leading-relaxed animate-fadeUp delay-200">
           We partner with ambitious brands and sellers to engineer profitable
           growth across India’s leading marketplaces.
           <br /><br />
@@ -48,11 +48,12 @@ export default function Home() {
           and margin-safe.
         </p>
 
-        <p className="mt-6 text-gray-500 tracking-widest text-sm">
+   <p className="mt-6 text-gray-500 tracking-widest text-sm animate-fadeUp delay-400">
           Platforms: Amazon | Flipkart | Meesho | Myntra
         </p>
 
-        <div className="mt-12">
+        <div className="mt-12 animate-fadeUp delay-600">
+
           <a
             href="#contact"
             className="bg-white text-black px-10 py-4 rounded-full font-semibold hover:scale-105 transition"
