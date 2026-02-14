@@ -12,7 +12,7 @@ export default function Home() {
       <nav className="flex justify-between items-center px-8 py-6 fixed top-0 w-full bg-black/70 backdrop-blur-xl border-b border-white/10 z-50">
 
         {/* Logo + Brand */}
-        <a href="#home" className="flex items-center gap-4 group">
+        <a href="#home" className="flex items-center gap-4 group select-none">
 
           <div className="relative">
             <img
@@ -35,9 +35,16 @@ export default function Home() {
             "></div>
           </div>
 
-          <span className="text-lg font-semibold tracking-[0.25em] text-gray-200 group-hover:text-white transition">
-            KHATUSHYAM
-          </span>
+          {/* ===== BRAND NAME FIXED HERE ===== */}
+          <div className="flex flex-col leading-tight">
+            <span className="text-lg font-semibold tracking-[0.18em] text-gray-200 group-hover:text-white transition">
+              KHATUSHYAM
+            </span>
+
+            <span className="text-xs tracking-[0.35em] text-gray-400 uppercase">
+              Commerce Intelligence
+            </span>
+          </div>
 
         </a>
 
@@ -52,7 +59,6 @@ export default function Home() {
       {/* ================= HERO ================= */}
       <section id="home" className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-44">
 
-        {/* Premium background glow */}
         <div className="absolute w-[650px] h-[650px] bg-blue-500/10 blur-[160px] rounded-full -z-10"></div>
 
         <h2 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl animate-fadeUp">
