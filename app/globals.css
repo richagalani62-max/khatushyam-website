@@ -30,18 +30,19 @@ body {
 /* ========================= */
 
 @keyframes fadeUp {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(40px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 .animate-fadeUp {
-  animation: fadeUp 1s ease-out forwards;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
 }
 
 .delay-200 { animation-delay: 0.2s; }
@@ -57,10 +58,3 @@ body {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
-
-/* Fade Up Animation */
-.animate-fadeUp {
-  opacity: 0;
-  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
