@@ -40,7 +40,6 @@ export default function Home() {
 
       {/* ================= HERO ================= */}
       <section id="home" className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-44">
-
         <div className="absolute w-[650px] h-[650px] bg-blue-500/10 blur-[160px] rounded-full -z-10"></div>
 
         <h2 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl">
@@ -74,7 +73,6 @@ export default function Home() {
         </h3>
 
         <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto text-gray-300">
-
           {[
             { step: "01", title: "Audit & Analysis", desc: "Deep marketplace audit to identify profit leaks and growth opportunities." },
             { step: "02", title: "Strategy Setup", desc: "Profit-first roadmap covering listings, ads, pricing and positioning." },
@@ -88,18 +86,14 @@ export default function Home() {
               <p className="text-sm text-gray-400">{item.desc}</p>
             </div>
           ))}
-
         </div>
       </section>
 
       {/* ================= RESULTS ================= */}
       <section className="relative z-10 px-8 py-24 bg-zinc-950 text-center">
-        <h3 className="text-3xl font-bold mb-16">
-          REAL GROWTH. REAL RESULTS.
-        </h3>
+        <h3 className="text-3xl font-bold mb-16">REAL GROWTH. REAL RESULTS.</h3>
 
         <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-
           {[
             { metric: "+120%", label: "Average Sales Growth", desc: "Achieved within first 90 days of optimization." },
             { metric: "5X", label: "Advertising ROAS Improvement", desc: "Through data-driven ad restructuring." },
@@ -111,7 +105,6 @@ export default function Home() {
               <p className="text-gray-400 text-sm">{item.desc}</p>
             </div>
           ))}
-
         </div>
       </section>
 
@@ -143,20 +136,125 @@ export default function Home() {
       </section>
 
       {/* ================= PRICING ================= */}
-      {/* (Your existing pricing section remains unchanged) */}
+      <section id="pricing" className="relative z-10 px-8 py-24 bg-black">
+        <h3 className="text-3xl font-bold text-center mb-16">
+          MARKETPLACE PRICING (MONTHLY)
+        </h3>
+
+        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          {[
+            {
+              title: "STARTER PACKAGE",
+              desc: "For new sellers & early-stage brands",
+              price: "₹3,000 – ₹7,000 / month",
+              items: [
+                "Account setup / takeover",
+                "10 optimized listings",
+                "Basic ads setup",
+                "Weekly performance check",
+                "Email & WhatsApp support"
+              ]
+            },
+            {
+              title: "GROWTH PACKAGE",
+              desc: "For scaling sellers focused on velocity",
+              price: "₹7,000 – ₹10,000 / month",
+              items: [
+                "Full account management",
+                "Advanced optimization",
+                "Daily ads management",
+                "Promotion planning",
+                "Inventory & pricing guidance",
+                "Monthly performance report"
+              ]
+            },
+            {
+              title: "SCALE PACKAGE (PREMIUM)",
+              desc: "For serious brands & high-revenue sellers",
+              price: "₹12,000+ / month",
+              items: [
+                "Dedicated account manager",
+                "Senior-led strategy",
+                "Daily ads & catalog control",
+                "Advanced analytics dashboards",
+                "SKU & category launch planning",
+                "Priority support"
+              ]
+            }
+          ].map((pkg, i) => (
+            <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+              <h4 className="text-xl font-semibold mb-4">{pkg.title}</h4>
+              <p className="text-gray-400 mb-6">{pkg.desc}</p>
+
+              <ul className="text-gray-400 space-y-2 text-sm">
+                {pkg.items.map((item, idx) => (
+                  <li key={idx}>• {item}</li>
+                ))}
+              </ul>
+
+              <p className="mt-6 font-semibold text-white">{pkg.price}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ================= CAREERS ================= */}
-      {/* (Your existing careers section remains unchanged) */}
+      <section id="careers" className="relative z-10 px-8 py-24 bg-zinc-950">
+        <h3 className="text-3xl font-bold text-center mb-6">
+          Career Opportunities
+        </h3>
+
+        <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto">
+          🌍 All roles are fully remote and open to Indian citizens only.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          {[
+            {
+              title: "Marketing Intern",
+              desc: "Work on client acquisition, outreach campaigns and growth strategy.",
+              comp: "10% commission on every successfully converted client project."
+            },
+            {
+              title: "E-Commerce Intern",
+              desc: "Assist in marketplace account management, ads optimization and reporting.",
+              comp: "10% commission on converted client accounts."
+            },
+            {
+              title: "Marketing Specialist",
+              desc: "Lead partnerships, performance marketing and revenue growth initiatives.",
+              comp: "Performance-linked structure + high commission model."
+            },
+            {
+              title: "E-Commerce Specialist",
+              desc: "Full account ownership, profit optimization and marketplace execution.",
+              comp: "Performance-based revenue share with incentives."
+            }
+          ].map((role, i) => (
+            <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white transition">
+              <h4 className="text-xl font-semibold mb-4">{role.title}</h4>
+
+              <p className="text-gray-400 mb-4">{role.desc}</p>
+
+              <p className="text-white font-semibold mb-2">Compensation:</p>
+              <p className="text-gray-400 mb-6 text-sm">{role.comp}</p>
+
+              <a
+                href={`mailto:richagalani62@gmail.com?subject=Application for ${role.title}`}
+                className="block text-center bg-white text-black px-6 py-2 rounded-lg font-semibold hover:opacity-80 transition"
+              >
+                Apply Now
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ================= CONTACT ================= */}
       <section id="contact" className="relative z-10 px-8 py-24 bg-zinc-950 text-center">
         <h3 className="text-3xl font-bold mb-8">
           READY TO SCALE YOUR SALES?
         </h3>
-
-        <p className="text-gray-400 mb-8">
-          Boost visibility. Increase conversions. Grow profits.
-        </p>
 
         <a
           href="mailto:richagalani62@gmail.com"
@@ -165,14 +263,6 @@ export default function Home() {
           ✉️ richagalani62@gmail.com
         </a>
       </section>
-
-      {/* ================= FLOATING CTA ================= */}
-      <a
-        href="#contact"
-        className="fixed bottom-6 right-6 bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition z-50"
-      >
-        Book Free Consultation
-      </a>
 
       {/* ================= FOOTER ================= */}
       <footer className="text-center py-10 border-t border-gray-800 text-gray-500 text-sm">
