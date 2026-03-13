@@ -237,59 +237,84 @@ export default function Home() {
         </div>
 
       </section>
+{/* ================= CAREERS ================= */}
+<section id="careers" className="px-8 py-24 bg-zinc-950">
 
-      {/* ================= CAREERS ================= */}
-      <section id="careers" className="px-8 py-24 bg-zinc-950">
+  <h3 className="text-3xl font-bold text-center mb-6">
+    Career Opportunities
+  </h3>
 
-        <h3 className="text-3xl font-bold text-center mb-6">
-          Career Opportunities
-        </h3>
+  <p className="text-center text-gray-400 mb-4 max-w-2xl mx-auto">
+    All roles are remote and open to Indian citizens.
+  </p>
 
-        <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto">
-          All roles are remote and open to Indian citizens.
+  <p className="text-center text-gray-500 mb-14">
+    Applications close once positions are filled.
+  </p>
+
+  <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
+    {[
+      {
+        title: "Marketing Intern",
+        desc: "Work on outreach campaigns and client acquisition.",
+        comp: "10% commission on converted clients"
+      },
+      {
+        title: "E-Commerce Intern",
+        desc: "Assist with marketplace account management.",
+        comp: "10% commission on converted accounts"
+      },
+      {
+        title: "Marketing Executive (Full-Time)",
+        desc: "Manage lead generation, partnerships and digital marketing campaigns.",
+        comp: "Fixed salary + performance incentives"
+      },
+      {
+        title: "E-Commerce Executive (Full-Time)",
+        desc: "Handle Amazon and Flipkart seller accounts including listings, ads and analytics.",
+        comp: "Fixed salary + performance incentives"
+      }
+    ].map((role, i) => (
+      <div key={i} className="p-8 border border-gray-800 rounded-xl hover:border-white hover:scale-[1.03] transition duration-300">
+
+        <h4 className="text-xl font-semibold mb-4">
+          {role.title}
+        </h4>
+
+        <p className="text-gray-400 mb-4">
+          {role.desc}
         </p>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        <p className="text-gray-400 text-sm mb-6">
+          {role.comp}
+        </p>
 
-          {[
-            {
-              title: "Marketing Intern",
-              desc: "Work on outreach campaigns and client acquisition.",
-              comp: "10% commission on converted clients"
-            },
-            {
-              title: "E-Commerce Intern",
-              desc: "Assist with marketplace account management.",
-              comp: "10% commission on converted accounts"
-            }
-          ].map((role, i) => (
-            <div key={i} className="p-8 border border-gray-800 rounded-xl">
+        <div className="flex gap-3">
 
-              <h4 className="text-xl font-semibold mb-4">
-                {role.title}
-              </h4>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/view"
+            target="_blank"
+            className="flex-1 text-center bg-white text-black px-4 py-2 rounded-lg font-semibold hover:scale-105 transition"
+          >
+            Apply Form
+          </a>
 
-              <p className="text-gray-400 mb-4">
-                {role.desc}
-              </p>
-
-              <p className="text-gray-400 text-sm mb-6">
-                {role.comp}
-              </p>
-
-              <a
-                href={`mailto:richagalani62@gmail.com?subject=Application for ${role.title}`}
-                className="block text-center bg-white text-black px-6 py-2 rounded-lg font-semibold"
-              >
-                Apply Now
-              </a>
-
-            </div>
-          ))}
+          <a
+            href={`mailto:richagalani62@gmail.com?subject=Application for ${role.title}`}
+            className="flex-1 text-center border border-white px-4 py-2 rounded-lg font-semibold hover:bg-white hover:text-black transition"
+          >
+            Email
+          </a>
 
         </div>
 
-      </section>
+      </div>
+    ))}
+
+  </div>
+
+</section>
 
       {/* ================= CONTACT ================= */}
       <section id="contact" className="px-8 py-24 bg-zinc-950 text-center">
