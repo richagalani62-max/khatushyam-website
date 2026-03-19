@@ -125,52 +125,76 @@ export default function Home() {
       </section>
 
       {/* ================= CAREERS ================= */}
-      <section id="careers" className="px-8 py-24 bg-zinc-950 text-center">
+     <section id="careers" className="px-8 py-24 bg-zinc-950 text-center">
 
-        <h3 className="text-3xl font-bold mb-6">Career Opportunities</h3>
+  <h3 className="text-3xl font-bold mb-6">Career Opportunities</h3>
 
-        <p className="text-gray-400 mb-10">
-          Remote roles for Indian candidates
-        </p>
+  <p className="text-gray-400 mb-10">
+    Remote roles for Indian candidates
+  </p>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+  <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
 
-          {roles.map((role, i) => (
-            <div key={i} className="p-6 border border-gray-800 rounded-xl">
+    {roles.map((role, i) => (
+      <div key={i} className="p-6 border border-gray-800 rounded-xl">
 
-              <h4 className="text-lg font-semibold mb-4">{role}</h4>
+        <h4 className="text-lg font-semibold mb-4">{role}</h4>
 
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform"
-                target="_blank"
-                className="bg-white text-black px-4 py-2 rounded-lg inline-block"
-              >
-                Apply Now
-              </a>
+        <div className="flex gap-3 justify-center">
 
-            </div>
-          ))}
+          {/* GOOGLE FORM */}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-black px-4 py-2 rounded-lg"
+          >
+            Apply Form
+          </a>
+
+          {/* EMAIL APPLY */}
+          <a
+            href={`mailto:richagalani62@gmail.com?subject=Application for ${role}&body=Hi, I am applying for ${role}. Please find my resume attached.`}
+            className="border border-white px-4 py-2 rounded-lg"
+          >
+            Email
+          </a>
 
         </div>
 
-      </section>
+      </div>
+    ))}
 
-      {/* ================= CONTACT ================= */}
+  </div>
+
+  {/* EXTRA NOTE */}
+  <p className="text-gray-500 text-sm mt-10">
+    You can also send your resume directly to <span className="text-white">richagalani62@gmail.com</span>
+  </p>
+
+</section>
       <section id="contact" className="py-24 text-center">
 
-        <h3 className="text-3xl mb-6">
-          Ready to Scale Your Marketplace Sales?
-        </h3>
+  <h3 className="text-3xl mb-6">
+    Ready to Scale Your Marketplace Sales?
+  </h3>
 
-        <a
-          href="mailto:richagalani62@gmail.com"
-          className="bg-white text-black px-8 py-3 rounded-full"
-        >
-          Contact Now
-        </a>
+  <div className="flex flex-col items-center gap-4">
 
-      </section>
+    <a
+      href="mailto:richagalani62@gmail.com?subject=Business Inquiry - KCI"
+      className="bg-white text-black px-8 py-3 rounded-full hover:scale-105 transition"
+    >
+      Contact Now
+    </a>
 
+    <p className="text-gray-400 text-sm">
+      or email us at <span className="text-white">richagalani62@gmail.com</span>
+    </p>
+
+  </div>
+
+</section> 
       {/* ================= FOOTER ================= */}
       <footer className="text-center py-10 text-gray-500 text-sm border-t border-gray-800">
         © {new Date().getFullYear()} Khatushyam Commerce Intelligence
