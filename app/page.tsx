@@ -1,4 +1,12 @@
 export default function Home() {
+
+  const roles = [
+    "Business Development Intern",
+    "Lead Generation Intern",
+    "Business Development Executive",
+    "E-Commerce Specialist"
+  ];
+
   return (
     <div className="relative bg-gradient-to-b from-black via-zinc-900 to-gray-950 text-white min-h-screen font-sans scroll-smooth overflow-hidden pt-24">
 
@@ -10,7 +18,6 @@ export default function Home() {
 
       {/* ================= NAVBAR ================= */}
       <nav className="flex justify-between items-center px-8 py-6 fixed top-0 w-full bg-black/70 backdrop-blur-xl border-b border-white/10 z-50">
-
         <a href="#home" className="flex items-center gap-4">
           <img src="/logo.png" className="h-11" />
           <div>
@@ -28,7 +35,7 @@ export default function Home() {
       </nav>
 
       {/* ================= HERO ================= */}
-      <section id="home" className="text-center py-44 px-6 relative">
+      <section id="home" className="text-center py-44 px-6">
 
         <h2 className="text-6xl font-bold max-w-4xl mx-auto">
           Scaling Marketplace Brands with
@@ -38,14 +45,14 @@ export default function Home() {
         </h2>
 
         <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-          We help brands grow faster across Amazon, Flipkart, Meesho & Myntra using data-driven strategies.
+          Grow faster across Amazon, Flipkart, Meesho & Myntra using data-driven strategies.
         </p>
 
         <div className="mt-10 flex justify-center gap-6">
 
           <a
             href="#contact"
-            className="bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-4 rounded-full font-semibold hover:scale-105 hover:shadow-xl transition"
+            className="bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-4 rounded-full font-semibold hover:scale-105 transition"
           >
             Get Free Audit (Worth ₹2,999)
           </a>
@@ -59,16 +66,12 @@ export default function Home() {
 
         </div>
 
-        <p className="mt-4 text-gray-500 text-sm">
-          Limited free audits available this month
-        </p>
-
       </section>
 
       {/* ================= TRUSTED ================= */}
       <section className="text-center py-16">
         <p className="text-gray-500 mb-8 uppercase tracking-widest text-sm">
-          Trusted Across Leading Marketplaces
+          Trusted Across Marketplaces
         </p>
 
         <div className="flex justify-center gap-10 text-gray-400">
@@ -78,58 +81,6 @@ export default function Home() {
           <span>Myntra</span>
           <span>Ajio</span>
         </div>
-      </section>
-
-      {/* ================= RESULTS ================= */}
-      <section className="py-20 text-center">
-
-        <h3 className="text-3xl font-bold mb-12">Proven Results</h3>
-
-        <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-
-          <div className="p-6 border border-gray-800 rounded-xl hover:scale-105 transition">
-            <h4 className="text-2xl text-indigo-400 font-bold">3X</h4>
-            <p className="text-gray-400 text-sm">Sales growth in 90 days</p>
-          </div>
-
-          <div className="p-6 border border-gray-800 rounded-xl hover:scale-105 transition">
-            <h4 className="text-2xl text-purple-400 font-bold">50+</h4>
-            <p className="text-gray-400 text-sm">Brands scaled</p>
-          </div>
-
-          <div className="p-6 border border-gray-800 rounded-xl hover:scale-105 transition">
-            <h4 className="text-2xl text-indigo-400 font-bold">₹10L+</h4>
-            <p className="text-gray-400 text-sm">Revenue managed</p>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ================= PROCESS ================= */}
-      <section className="py-24 bg-black text-center">
-
-        <h3 className="text-3xl font-bold mb-16">How We Scale Your Brand</h3>
-
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-
-          <div>
-            <h4 className="font-semibold mb-2">1. Audit</h4>
-            <p className="text-gray-400 text-sm">We analyze listings & ads</p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">2. Optimize</h4>
-            <p className="text-gray-400 text-sm">Improve listings & creatives</p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">3. Scale</h4>
-            <p className="text-gray-400 text-sm">Increase revenue fast</p>
-          </div>
-
-        </div>
-
       </section>
 
       {/* ================= PRICING ================= */}
@@ -143,19 +94,19 @@ export default function Home() {
 
           {[
             {
-              title: "Starter Package",
-              price: "₹3,000 – ₹7,000 / month",
-              items: ["Account setup", "10 listings", "Basic ads", "Weekly tracking"]
+              title: "Starter",
+              price: "₹3K – ₹7K",
+              items: ["Setup", "10 Listings", "Basic Ads", "Weekly Tracking"]
             },
             {
-              title: "Growth Package",
-              price: "₹7,000 – ₹10,000 / month",
-              items: ["Full management", "Advanced optimization", "Daily ads", "Reports"]
+              title: "Growth",
+              price: "₹7K – ₹10K",
+              items: ["Full Management", "Optimization", "Daily Ads", "Reports"]
             },
             {
-              title: "Scale Package",
-              price: "₹12,000+ / month",
-              items: ["Dedicated manager", "Advanced strategy", "Full control", "Analytics"]
+              title: "Scale",
+              price: "₹12K+",
+              items: ["Dedicated Manager", "Advanced Strategy", "Full Control", "Analytics"]
             }
           ].map((pkg, i) => (
             <div key={i} className="p-8 border border-gray-800 rounded-xl hover:scale-105 transition">
@@ -178,41 +129,24 @@ export default function Home() {
 
         <h3 className="text-3xl font-bold mb-6">Career Opportunities</h3>
 
-        <p className="text-gray-400 mb-4">Remote roles for Indian candidates</p>
+        <p className="text-gray-400 mb-10">
+          Remote roles for Indian candidates
+        </p>
 
-        <div className="mb-12 max-w-xl mx-auto">
-          <h4 className="font-semibold mb-2">Why Join Us?</h4>
-          <p className="text-gray-400 text-sm">
-            Work with real clients, earn performance-based income and build practical skills.
-          </p>
-        </div>
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-
-          {["Marketing Intern", "E-Commerce Intern"].map((role, i) => (
+          {roles.map((role, i) => (
             <div key={i} className="p-6 border border-gray-800 rounded-xl">
 
-              <h4 className="mb-2">{role}</h4>
-              <p className="text-gray-400 text-sm mb-4">10% commission</p>
+              <h4 className="text-lg font-semibold mb-4">{role}</h4>
 
-              <div className="flex gap-3">
-
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/view"
-                  target="_blank"
-                  className="flex-1 bg-white text-black py-2 rounded text-center"
-                >
-                  Apply
-                </a>
-
-                <a
-                  href="mailto:richagalani62@gmail.com"
-                  className="flex-1 border border-white py-2 rounded text-center"
-                >
-                  Email
-                </a>
-
-              </div>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform"
+                target="_blank"
+                className="bg-white text-black px-4 py-2 rounded-lg inline-block"
+              >
+                Apply Now
+              </a>
 
             </div>
           ))}
@@ -230,7 +164,7 @@ export default function Home() {
 
         <a
           href="mailto:richagalani62@gmail.com"
-          className="bg-white text-black px-8 py-3 rounded-full hover:scale-105 transition"
+          className="bg-white text-black px-8 py-3 rounded-full"
         >
           Contact Now
         </a>
