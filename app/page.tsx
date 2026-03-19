@@ -12,7 +12,8 @@ export default function Home() {
 
       {/* Background */}
       <div
-        className="absolute inset-0 opacity-[0.03] blur-sm bg-center bg-no-repeat bg-contain"
+      <div
+  className="absolute inset-0 opacity-[0.03] blur-sm bg-center bg-no-repeat bg-contain pointer-events-none"
         style={{ backgroundImage: "url('/logo.png')" }}
       ></div>
 
@@ -140,28 +141,32 @@ export default function Home() {
 
         <h4 className="text-lg font-semibold mb-4">{role}</h4>
 
-        <div className="flex gap-3 justify-center">
+       <div className="flex gap-3 justify-center">
 
-          {/* GOOGLE FORM */}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-black px-4 py-2 rounded-lg"
-          >
-            Apply Form
-          </a>
+  {/* APPLY FORM */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform",
+        "_blank"
+      )
+    }
+    className="bg-white text-black px-4 py-2 rounded-lg"
+  >
+    Apply Form
+  </button>
 
-          {/* EMAIL APPLY */}
-          <a
-            href={`mailto:richagalani62@gmail.com?subject=Application for ${role}&body=Hi, I am applying for ${role}. Please find my resume attached.`}
-            className="border border-white px-4 py-2 rounded-lg"
-          >
-            Email
-          </a>
+  {/* EMAIL */}
+  <button
+    onClick={() =>
+      (window.location.href = `mailto:richagalani62@gmail.com?subject=Application for ${role}`)
+    }
+    className="border border-white px-4 py-2 rounded-lg"
+  >
+    Email
+  </button>
 
-        </div>
-
+</div>
       </div>
     ))}
 
@@ -173,7 +178,7 @@ export default function Home() {
   </p>
 
 </section>
-      <section id="contact" className="py-24 text-center">
+    <section id="contact" className="py-24 text-center">
 
   <h3 className="text-3xl mb-6">
     Ready to Scale Your Marketplace Sales?
@@ -181,12 +186,15 @@ export default function Home() {
 
   <div className="flex flex-col items-center gap-4">
 
-    <a
-      href="mailto:richagalani62@gmail.com?subject=Business Inquiry - KCI"
+    <button
+      onClick={() =>
+        (window.location.href =
+          "mailto:richagalani62@gmail.com?subject=Business Inquiry - KCI")
+      }
       className="bg-white text-black px-8 py-3 rounded-full hover:scale-105 transition"
     >
       Contact Now
-    </a>
+    </button>
 
     <p className="text-gray-400 text-sm">
       or email us at <span className="text-white">richagalani62@gmail.com</span>
@@ -194,7 +202,7 @@ export default function Home() {
 
   </div>
 
-</section> 
+</section>
       {/* ================= FOOTER ================= */}
       <footer className="text-center py-10 text-gray-500 text-sm border-t border-gray-800">
         © {new Date().getFullYear()} Khatushyam Commerce Intelligence
