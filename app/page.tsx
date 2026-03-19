@@ -1,3 +1,5 @@
+"use client";
+
 export default function Home() {
 
   const roles = [
@@ -7,16 +9,23 @@ export default function Home() {
     "E-Commerce Specialist"
   ];
 
-  return (
-    <div className="relative bg-gradient-to-b from-black via-zinc-900 to-gray-950 text-white min-h-screen font-sans scroll-smooth overflow-hidden pt-24">
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-      {/* Background (FIXED) */}
+  return (
+    <div className="relative bg-gradient-to-b from-black via-zinc-900 to-gray-950 text-white min-h-screen font-sans overflow-hidden pt-24">
+
+      {/* Background */}
       <div
         className="absolute inset-0 opacity-[0.03] blur-sm bg-center bg-no-repeat bg-contain pointer-events-none"
         style={{ backgroundImage: "url('/logo.png')" }}
       ></div>
 
-      {/* ================= NAVBAR ================= */}
+      {/* NAVBAR */}
       <nav className="flex justify-between items-center px-8 py-6 fixed top-0 w-full bg-black/70 backdrop-blur-xl border-b border-white/10 z-50">
         <a href="#home" className="flex items-center gap-4">
           <img src="/logo.png" className="h-11" />
@@ -27,15 +36,15 @@ export default function Home() {
         </a>
 
         <div className="space-x-8 text-sm text-gray-300">
-          <a href="#home" className="hover:text-white">Home</a>
-          <a href="#pricing" className="hover:text-white">Pricing</a>
-          <a href="#careers" className="hover:text-white">Careers</a>
-          <a href="#contact" className="hover:text-white">Contact</a>
+          <button onClick={() => scrollTo("home")}>Home</button>
+          <button onClick={() => scrollTo("pricing")}>Pricing</button>
+          <button onClick={() => scrollTo("careers")}>Careers</button>
+          <button onClick={() => scrollTo("contact")}>Contact</button>
         </div>
       </nav>
 
-      {/* ================= HERO ================= */}
-      <section id="home" className="text-center py-44 px-6 pt-24 -mt-24">
+      {/* HERO */}
+      <section id="home" className="text-center py-44 px-6">
 
         <h2 className="text-6xl font-bold max-w-4xl mx-auto">
           Scaling Marketplace Brands with
@@ -51,14 +60,14 @@ export default function Home() {
         <div className="mt-10 flex justify-center gap-6">
 
           <button
-            onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+            onClick={() => scrollTo("contact")}
             className="bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-4 rounded-full font-semibold hover:scale-105 transition"
           >
             Get Free Audit (Worth ₹2,999)
           </button>
 
           <button
-            onClick={() => document.getElementById("pricing").scrollIntoView({ behavior: "smooth" })}
+            onClick={() => scrollTo("pricing")}
             className="border border-gray-600 px-10 py-4 rounded-full hover:bg-white hover:text-black transition"
           >
             View Pricing
@@ -68,7 +77,7 @@ export default function Home() {
 
       </section>
 
-      {/* ================= TRUSTED ================= */}
+      {/* TRUSTED */}
       <section className="text-center py-16">
         <p className="text-gray-500 mb-8 uppercase tracking-widest text-sm">
           Trusted Across Marketplaces
@@ -83,8 +92,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= PRICING ================= */}
-      <section id="pricing" className="px-8 py-24 pt-24 -mt-24">
+      {/* PRICING */}
+      <section id="pricing" className="px-8 py-24">
 
         <h3 className="text-3xl font-bold text-center mb-16">
           Marketplace Pricing (Monthly)
@@ -124,8 +133,8 @@ export default function Home() {
 
       </section>
 
-      {/* ================= CAREERS ================= */}
-      <section id="careers" className="px-8 py-24 bg-zinc-950 text-center pt-24 -mt-24">
+      {/* CAREERS */}
+      <section id="careers" className="px-8 py-24 bg-zinc-950 text-center">
 
         <h3 className="text-3xl font-bold mb-6">Career Opportunities</h3>
 
@@ -142,20 +151,24 @@ export default function Home() {
 
               <div className="flex gap-3 justify-center">
 
-                {/* APPLY FORM */}
                 <button
-                  type="button"
-                  onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform", "_blank")}
-                  className="bg-white text-black px-4 py-2 rounded-lg hover:scale-105 transition"
+                  onClick={() =>
+                    window.open(
+                      "https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform",
+                      "_blank"
+                    )
+                  }
+                  className="bg-white text-black px-4 py-2 rounded-lg"
                 >
                   Apply Form
                 </button>
 
-                {/* EMAIL */}
                 <button
-                  type="button"
-                  onClick={() => window.location.href = `mailto:richagalani62@gmail.com?subject=Application for ${role}`}
-                  className="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition"
+                  onClick={() =>
+                    window.location.href =
+                      `mailto:richagalani62@gmail.com?subject=Application for ${role}`
+                  }
+                  className="border border-white px-4 py-2 rounded-lg"
                 >
                   Email
                 </button>
@@ -167,34 +180,28 @@ export default function Home() {
 
         </div>
 
-        <p className="text-gray-500 text-sm mt-10">
-          You can also send your resume to <span className="text-white">richagalani62@gmail.com</span>
-        </p>
-
       </section>
 
-      {/* ================= CONTACT ================= */}
-      <section id="contact" className="py-24 text-center pt-24 -mt-24">
+      {/* CONTACT */}
+      <section id="contact" className="py-24 text-center">
 
         <h3 className="text-3xl mb-6">
           Ready to Scale Your Marketplace Sales?
         </h3>
 
         <button
-          type="button"
-          onClick={() => window.location.href = "mailto:richagalani62@gmail.com?subject=Business Inquiry - KCI"}
-          className="bg-white text-black px-8 py-3 rounded-full hover:scale-105 transition"
+          onClick={() =>
+            window.location.href =
+              "mailto:richagalani62@gmail.com?subject=Business Inquiry - KCI"
+          }
+          className="bg-white text-black px-8 py-3 rounded-full"
         >
           Contact Now
         </button>
 
-        <p className="text-gray-400 text-sm mt-4">
-          or email: <span className="text-white">richagalani62@gmail.com</span>
-        </p>
-
       </section>
 
-      {/* ================= FOOTER ================= */}
+      {/* FOOTER */}
       <footer className="text-center py-10 text-gray-500 text-sm border-t border-gray-800">
         © {new Date().getFullYear()} Khatushyam Commerce Intelligence
       </footer>
