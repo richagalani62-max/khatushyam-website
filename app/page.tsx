@@ -18,18 +18,6 @@ export default function Home() {
     }
   }, []);
 
-  const openForm = () => {
-    window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
-
-  const sendEmail = (subject) => {
-    window.location.href = `mailto:richagalani62@gmail.com?subject=${encodeURIComponent(subject)}`;
-  };
-
   return (
     <div className="relative bg-gradient-to-b from-black via-zinc-900 to-gray-950 text-white min-h-screen font-sans overflow-hidden pt-24">
 
@@ -197,19 +185,23 @@ export default function Home() {
 
               <div className="flex gap-3 justify-center flex-wrap">
 
-                <button
-                  onClick={openForm}
+                {/* APPLY FORM */}
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white text-black px-4 py-2 rounded-lg"
                 >
                   Apply Form
-                </button>
+                </a>
 
-                <button
-                  onClick={() => sendEmail(`Application for ${role}`)}
+                {/* EMAIL */}
+                <a
+                  href={`mailto:richagalani62@gmail.com?subject=${encodeURIComponent(`Application for ${role}`)}`}
                   className="border border-white px-4 py-2 rounded-lg"
                 >
                   Email
-                </button>
+                </a>
 
               </div>
 
@@ -225,12 +217,12 @@ export default function Home() {
           Ready to Scale Your Marketplace Sales?
         </h3>
 
-        <button
-          onClick={() => sendEmail("Business Inquiry - KCI")}
-          className="bg-white text-black px-8 py-3 rounded-full hover:scale-105 transition"
+        <a
+          href="mailto:richagalani62@gmail.com?subject=Business Inquiry - KCI"
+          className="bg-white text-black px-8 py-3 rounded-full hover:scale-105 transition inline-block"
         >
           Contact Now
-        </button>
+        </a>
 
       </section>
 
