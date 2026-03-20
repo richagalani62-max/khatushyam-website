@@ -1,5 +1,7 @@
 "use client";
 
+import { useCallback } from "react";
+
 export default function Home() {
 
   const roles = [
@@ -9,9 +11,23 @@ export default function Home() {
     "E-Commerce Specialist"
   ];
 
-  const scrollTo = (id) => {
+  const scrollTo = useCallback((id) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
+
+  const openForm = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const sendEmail = (subject) => {
+    window.location.href = `mailto:richagalani62@gmail.com?subject=${encodeURIComponent(subject)}`;
   };
 
   return (
@@ -25,15 +41,15 @@ export default function Home() {
 
       {/* NAVBAR */}
       <nav className="flex justify-between items-center px-8 py-6 fixed top-0 w-full bg-black/70 backdrop-blur-xl border-b border-white/10 z-50">
-        <a href="#home" className="flex items-center gap-4">
-          <img src="/logo.png" className="h-11" />
+        <button onClick={() => scrollTo("home")} className="flex items-center gap-4">
+          <img src="/logo.png" className="h-11" alt="logo" />
           <div>
             <span className="text-lg tracking-widest">KHATUSHYAM</span>
             <span className="block text-xs text-gray-400">Commerce Intelligence</span>
           </div>
-        </a>
+        </button>
 
-        <div className="space-x-8 text-sm text-gray-300">
+        <div className="space-x-6 text-sm text-gray-300">
           <button onClick={() => scrollTo("home")}>Home</button>
           <button onClick={() => scrollTo("pricing")}>Pricing</button>
           <button onClick={() => scrollTo("careers")}>Careers</button>
@@ -112,13 +128,11 @@ export default function Home() {
 
       {/* PRICING */}
       <section id="pricing" className="px-8 py-24">
-
         <h3 className="text-3xl font-bold text-center mb-16">
           Marketplace Pricing (Monthly)
         </h3>
 
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-
           {[
             {
               title: "Starter",
@@ -137,7 +151,6 @@ export default function Home() {
             }
           ].map((pkg, i) => (
             <div key={i} className="p-8 border border-gray-800 rounded-xl hover:scale-105 transition">
-
               <h4 className="text-xl mb-4">{pkg.title}</h4>
 
               <ul className="text-gray-400 text-sm space-y-2">
@@ -154,12 +167,9 @@ export default function Home() {
               >
                 Get Started
               </button>
-
             </div>
           ))}
-
         </div>
-
       </section>
 
       {/* CAREERS */}
@@ -180,7 +190,6 @@ export default function Home() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-
           {roles.map((role, i) => (
             <div key={i} className="p-6 border border-gray-800 rounded-xl hover:scale-105 transition">
 
@@ -189,22 +198,14 @@ export default function Home() {
               <div className="flex gap-3 justify-center flex-wrap">
 
                 <button
-                  onClick={() =>
-                    window.open(
-                      "https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform",
-                      "_blank"
-                    )
-                  }
+                  onClick={openForm}
                   className="bg-white text-black px-4 py-2 rounded-lg"
                 >
                   Apply Form
                 </button>
 
                 <button
-                  onClick={() =>
-                    window.location.href =
-                      `mailto:richagalani62@gmail.com?subject=Application for ${role}`
-                  }
+                  onClick={() => sendEmail(`Application for ${role}`)}
                   className="border border-white px-4 py-2 rounded-lg"
                 >
                   Email
@@ -214,9 +215,7 @@ export default function Home() {
 
             </div>
           ))}
-
         </div>
-
       </section>
 
       {/* CONTACT */}
@@ -227,10 +226,7 @@ export default function Home() {
         </h3>
 
         <button
-          onClick={() =>
-            window.location.href =
-              "mailto:richagalani62@gmail.com?subject=Business Inquiry - KCI"
-          }
+          onClick={() => sendEmail("Business Inquiry - KCI")}
           className="bg-white text-black px-8 py-3 rounded-full hover:scale-105 transition"
         >
           Contact Now
