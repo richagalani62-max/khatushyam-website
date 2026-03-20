@@ -12,7 +12,20 @@ export default function Home() {
   // Smooth scroll with navbar offset fix
   const scrollTo = (id) => {
     const el = document.getElementById(id);
-    if (el) {
+   // Smooth scroll with navbar offset fix
+const scrollTo = (id) => {
+  const el = document.getElementById(id);
+
+  if (el) {
+    const yOffset = -80; // adjust for fixed navbar
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  }
+};
       const yOffset = -80;
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
