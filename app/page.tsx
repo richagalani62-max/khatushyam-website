@@ -2,30 +2,10 @@
 
 export default function Home() {
 
-  const roles = [
-    "Business Development Intern",
-    "Lead Generation Intern",
-    "Business Development Executive",
-    "E-Commerce Specialist"
-  ];
-
   // Smooth scroll with navbar offset fix
   const scrollTo = (id) => {
     const el = document.getElementById(id);
-   // Smooth scroll with navbar offset fix
-const scrollTo = (id) => {
-  const el = document.getElementById(id);
-
-  if (el) {
-    const yOffset = -80; // adjust for fixed navbar
-    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-    window.scrollTo({
-      top: y,
-      behavior: "smooth",
-    });
-  }
-};
+    if (el) {
       const yOffset = -80;
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
@@ -35,6 +15,29 @@ const scrollTo = (id) => {
       });
     }
   };
+
+  const roles = [
+    {
+      title: "Marketing Intern",
+      desc: "Work on outreach campaigns and client acquisition.",
+      comp: "10% commission on converted clients",
+    },
+    {
+      title: "E-Commerce Intern",
+      desc: "Assist with marketplace account management.",
+      comp: "10% commission on converted accounts",
+    },
+    {
+      title: "Marketing Executive (Full-Time)",
+      desc: "Manage lead generation, partnerships and campaigns.",
+      comp: "Fixed salary + incentives",
+    },
+    {
+      title: "E-Commerce Executive (Full-Time)",
+      desc: "Handle Amazon & Flipkart accounts, ads and analytics.",
+      comp: "Fixed salary + incentives",
+    },
+  ];
 
   return (
     <div className="relative bg-gradient-to-b from-black via-zinc-900 to-gray-950 text-white min-h-screen font-sans pt-24">
@@ -50,7 +53,7 @@ const scrollTo = (id) => {
 
         <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
           <img src="/logo.png" className="h-10" alt="logo" />
-          <div className="text-left leading-tight">
+          <div className="leading-tight">
             <span className="text-sm md:text-lg tracking-widest block">KHATUSHYAM</span>
             <span className="text-[10px] md:text-xs text-gray-400">Commerce Intelligence</span>
           </div>
@@ -74,7 +77,7 @@ const scrollTo = (id) => {
       <section id="home" className="text-center py-32 px-6">
 
         <h1 className="text-4xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight">
-          Helping Brands Scale to ₹1L+ Monthly Sales with
+          Scaling Marketplace Brands with
           <span className="block text-transparent bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text">
             Data-Driven Growth
           </span>
@@ -111,32 +114,15 @@ const scrollTo = (id) => {
         </p>
 
         <div className="flex justify-center gap-8 text-gray-400 flex-wrap text-sm">
-          {["Amazon", "Flipkart", "Meesho", "Myntra", "Ajio"].map((brand) => (
-            <span key={brand}>{brand}</span>
-          ))}
-        </div>
-      </section>
-
-      {/* WHY */}
-      <section className="px-6 py-16 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-10">Why Choose KCI?</h2>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-gray-300">
-          {[
-            ["Data-Driven Strategy", "We use analytics, not guesswork."],
-            ["Marketplace Experts", "Amazon & Flipkart specialists."],
-            ["Performance Focused", "We grow only when you grow."]
-          ].map(([title, desc]) => (
-            <div key={title}>
-              <h4 className="font-semibold mb-2">{title}</h4>
-              <p className="text-sm text-gray-400">{desc}</p>
-            </div>
+          {["Amazon", "Flipkart", "Meesho", "Myntra", "Ajio"].map((b) => (
+            <span key={b}>{b}</span>
           ))}
         </div>
       </section>
 
       {/* PRICING */}
       <section id="pricing" className="px-6 py-20">
+
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
           Marketplace Pricing
         </h2>
@@ -146,7 +132,7 @@ const scrollTo = (id) => {
           {[
             { title: "Starter", price: "₹3000 – ₹7000", items: ["Setup", "10 Listings", "Basic Ads"] },
             { title: "Growth", price: "₹7000 – ₹10000", items: ["Full Management", "Optimization", "Daily Ads"] },
-            { title: "Scale", price: "₹12000+", items: ["Dedicated Manager", "Advanced Strategy", "Analytics"] }
+            { title: "Scale", price: "₹12000+", items: ["Dedicated Manager", "Advanced Strategy", "Analytics"] },
           ].map((pkg) => (
             <div key={pkg.title} className="p-6 border border-gray-800 rounded-xl hover:scale-105 transition">
 
@@ -171,36 +157,42 @@ const scrollTo = (id) => {
           ))}
 
         </div>
+
       </section>
 
       {/* CAREERS */}
       <section id="careers" className="px-6 py-20 bg-zinc-950 text-center">
 
-        <h2 className="text-2xl md:text-3xl font-bold mb-3">Career Opportunities</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          Career Opportunities
+        </h2>
 
-        <p className="text-gray-400 mb-6 text-sm">
+        <p className="text-gray-400 mb-10 text-sm">
           Remote • Incentives • Startup Experience
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {roles.map((role) => (
-            <div key={role} className="p-6 border border-gray-800 rounded-xl hover:scale-105 transition">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
-              <h4 className="mb-4">{role}</h4>
+          {roles.map((role) => (
+            <div key={role.title} className="p-6 border border-gray-800 rounded-xl hover:scale-105 transition">
+
+              <h4 className="text-lg mb-3">{role.title}</h4>
+
+              <p className="text-gray-400 text-sm mb-2">{role.desc}</p>
+              <p className="text-gray-500 text-sm mb-4">{role.comp}</p>
 
               <div className="flex gap-3 justify-center flex-wrap">
 
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSeTwE9DUyrUbVuaoDCihX3uFOP0ApYoLt2zBGTRFlPkDt7R8w/viewform"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="bg-white text-black px-4 py-2 rounded-lg"
                 >
                   Apply
                 </a>
 
                 <a
-                  href={`mailto:richagalani62@gmail.com?subject=${encodeURIComponent(`Application for ${role}`)}`}
+                  href={`mailto:richagalani62@gmail.com?subject=Application for ${role.title}`}
                   className="border border-white px-4 py-2 rounded-lg"
                 >
                   Email
@@ -210,6 +202,7 @@ const scrollTo = (id) => {
 
             </div>
           ))}
+
         </div>
 
       </section>
@@ -221,7 +214,7 @@ const scrollTo = (id) => {
 
         <a
           href="mailto:richagalani62@gmail.com?subject=Business Inquiry - KCI"
-          className="bg-white text-black px-6 py-3 rounded-full inline-block hover:scale-105 transition"
+          className="bg-white text-black px-6 py-3 rounded-full inline-block"
         >
           Contact Now
         </a>
@@ -229,10 +222,10 @@ const scrollTo = (id) => {
       </section>
 
       {/* FLOATING BUTTON */}
-      <div className="fixed bottom-5 right-5 z-50">
+      <div className="fixed bottom-5 right-5">
         <button
           onClick={() => scrollTo("contact")}
-          className="bg-gradient-to-r from-indigo-500 to-purple-600 px-5 py-2 rounded-full shadow-lg hover:scale-105 transition"
+          className="bg-gradient-to-r from-indigo-500 to-purple-600 px-5 py-2 rounded-full"
         >
           Free Audit 🚀
         </button>
