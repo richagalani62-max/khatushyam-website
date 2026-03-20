@@ -9,7 +9,7 @@ export default function Home() {
     "E-Commerce Specialist"
   ];
 
-  // FIXED SCROLL (handles navbar offset)
+  // Smooth scroll with navbar offset fix
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
