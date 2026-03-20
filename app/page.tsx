@@ -9,13 +9,17 @@ export default function Home() {
     "E-Commerce Specialist"
   ];
 
+  // FIXED SCROLL (handles navbar offset)
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      const yOffset = -80; // fix navbar overlap
+      const yOffset = -80;
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-      window.scrollTo({ top: y, behavior: "smooth" });
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -32,7 +36,7 @@ export default function Home() {
       <nav className="flex justify-between items-center px-6 md:px-10 py-4 fixed top-0 w-full bg-black/70 backdrop-blur-xl border-b border-white/10 z-50">
 
         <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
-          <img src="/logo.png" className="h-10" alt="Khatushyam Logo" />
+          <img src="/logo.png" className="h-10" alt="logo" />
           <div className="text-left leading-tight">
             <span className="text-sm md:text-lg tracking-widest block">KHATUSHYAM</span>
             <span className="text-[10px] md:text-xs text-gray-400">Commerce Intelligence</span>
@@ -41,7 +45,11 @@ export default function Home() {
 
         <div className="hidden md:flex gap-6 text-sm text-gray-300">
           {["home", "pricing", "careers", "contact"].map((item) => (
-            <button key={item} onClick={() => scrollTo(item)} className="hover:text-white transition">
+            <button
+              key={item}
+              onClick={() => scrollTo(item)}
+              className="hover:text-white transition"
+            >
               {item.charAt(0).toUpperCase() + item.slice(1)}
             </button>
           ))}
@@ -121,12 +129,14 @@ export default function Home() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
           {[
             { title: "Starter", price: "₹3000 – ₹7000", items: ["Setup", "10 Listings", "Basic Ads"] },
             { title: "Growth", price: "₹7000 – ₹10000", items: ["Full Management", "Optimization", "Daily Ads"] },
             { title: "Scale", price: "₹12000+", items: ["Dedicated Manager", "Advanced Strategy", "Analytics"] }
           ].map((pkg) => (
             <div key={pkg.title} className="p-6 border border-gray-800 rounded-xl hover:scale-105 transition">
+
               <h4 className="text-lg mb-3">{pkg.title}</h4>
 
               <ul className="text-gray-400 text-sm space-y-1">
@@ -143,8 +153,10 @@ export default function Home() {
               >
                 Get Started
               </button>
+
             </div>
           ))}
+
         </div>
       </section>
 
